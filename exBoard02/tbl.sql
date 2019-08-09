@@ -47,3 +47,5 @@ select /*+ INDEX_DESC(tbl_image pk_image) */ rownum rn, idx, name from tbl_image
 select idx, name from (select /*+ INDEX_DESC(tbl_image pk_image) */ rownum rn, idx, name from tbl_image where rownum <=12) where rn > 6;
 
 select count(idx) from tbl_image;
+
+-- 깃허브 커밋 테스트 라인입니다. 두번째 커밋입니다.
