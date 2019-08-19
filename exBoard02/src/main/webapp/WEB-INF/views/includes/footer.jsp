@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/spring/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/spring/css/animate.min.css" />
     <link rel="stylesheet" href="/spring/css/ionicons.min.css" />
-    <link rel="stylesheet" href="/spring/css/stylesEX.css" />
+    <link rel="stylesheet" href="/spring/css/styles.css" />
 </head>
 <body>
     <footer id="footer">
@@ -76,5 +76,10 @@
 <style type="text/css">  
 body.modal-open { overflow: inherit; padding-right: 0 !important; } 
 body {padding-right: 0 !important;}
+
+header {
+	min-height: 70%;
+}
 </style>
+
 </html>

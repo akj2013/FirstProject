@@ -12,7 +12,7 @@ public class Criteria {
 	private int amount;
 	
 	public Criteria() {
-		this(1,3);
+		this(1,6); // 페이지 당 출력되는 사진 갯수
 	}
 		
 	public Criteria(int pageNum, int amount) {

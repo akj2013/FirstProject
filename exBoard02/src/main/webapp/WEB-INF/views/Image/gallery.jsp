@@ -46,11 +46,12 @@
 			<div class="row no-gutter">
 				<c:if test="${!empty list }">
 					<c:set var="listcnt" value="${list.size() }" />
+					<c:set var="check" value="1"/> <!-- 체크 포인트 : choose문에서 사용.-->
 					<c:forEach var="list" items="${list }">
 						<div class="col-lg-4 col-sm-6">
 							<a href="#galleryModal" class="gallery-box" data-toggle="modal" data-src="/spring/assets/${list.getFilename() }"> 
 
-								<img src="/spring/assets/${list.getFilename() }" class="img-responsive" alt="${list.getFilename() }" />
+								<img src="/spring/assets/${list.getFilename() }" class="img-responsive" alt="${list.getFilename() }" style="width: 100%; height: 329px;"/>
 								<div class="gallery-box-caption">
 									<div class="gallery-box-content">
 										<div>
@@ -60,6 +61,16 @@
 								</div>
 							</a>
 						</div>
+						<!-- 창크기를 줄였을 때 한 줄에 사진이 두 장이 나오도록 만드는 태그를 생성한다. -->
+						<c:choose> 
+							<c:when test="${check eq '1' }">
+								<c:set var="check" value="2"/>
+							</c:when>
+							<c:when test="${check eq '2' }">
+								<div class="clearfix hidden-lg"></div>
+								<c:set var="check" value="1"/>
+							</c:when>
+						</c:choose>
 						<c:set var="listcnt" value="${listcnt-1 }" />
 					</c:forEach>
 				</c:if>
@@ -120,7 +131,7 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-body">
-					<img src="" id="galleryImage" class="img-responsive" />
+					<img src="" id="galleryImage" class="img-responsive" style="width: 100%; height: 100%;"/>
 					<p>
 						<br />
 					<form method="post" action="/spring/Image/delete">
@@ -189,4 +200,9 @@
 
 
 </body>
+<style type="text/css">
+header {
+	background-image: url(../assets/gallery1.jpg);
+}
+</style>
 </html>

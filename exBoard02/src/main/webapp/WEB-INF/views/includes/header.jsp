@@ -27,8 +27,8 @@
         <div class="header-content" >
             <div class="inner">
                 <c:if test="${page eq 'gallery' }">
-                	<h1 class="cursive">GALLERY</h1>
-                	<h4>This is a gallery page</h4>
+                	<h1 class="cursive" style="color: black;">GALLERY</h1>
+                	<h4 style="color: black;">This is a gallery page</h4>
                 </c:if>
                 
                 <c:if test="${page eq 'main' }">
