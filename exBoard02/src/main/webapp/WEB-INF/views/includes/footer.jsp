@@ -71,4 +71,10 @@
     <script src="/spring/js/wow.js"></script>
     <script src="/spring/js/scripts.js"></script>
 </body>
+<!-- css 수정 : 모달을 클릭했을 때와 종료했을 때 padding-right이 적용되는 것을 방지하기 위해서 작성. 
+모든 페이지에서 footer를 호출하며, 가장 마지막에 적용되기 때문에 여기에서 적용시켜 준다. 실제로는 js에서 적용하는 것 같지만 수정이 어렵다. -->
+<style type="text/css">  
+body.modal-open { overflow: inherit; padding-right: 0 !important; } 
+body {padding-right: 0 !important;}
+</style>
 </html>
