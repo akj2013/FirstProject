@@ -30,15 +30,20 @@
                 	<h1 class="cursive" style="color: black;">GALLERY</h1>
                 	<h4 style="color: black;">This is a gallery page</h4>
                 </c:if>
-                
                 <c:if test="${page eq 'main' }">
 	                <h1 class="cursive">MAIN</h1>
                 	<h4>This is a main page</h4>	
                 </c:if>
-                
                 <c:if test="${page eq 'index' }">
 	                <h1 class="cursive">INDEX</h1>
                 	<h4>This is a index page</h4>	
+                </c:if>
+                <c:if test="${page eq 'board' }">
+	                <h1 class="cursive" style="text-shadow: black 4px 2px;">BOARD</h1>
+                	<h4 style="color: black;">This is a board page</h4>	
+                	<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+                		<a href="#one" class="btn btn-default btn-xl page-scroll" style="color: black;">Scroll Down</a>
+                	</div>
                 </c:if>               	
             </div>
         </div>    

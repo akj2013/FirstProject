@@ -48,18 +48,18 @@
                         <a class="page-scroll" href="/spring/Image/uploadAjax">FILEUP</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="/spring/board/BoardList">BOARD</a>
+                        <a class="page-scroll" href="/spring/board/BoardListWithPaging">BOARD</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                    	<c:if test="${LoginUser==null }">
                     	<li>
-                        	<a class="page-scroll" data-toggle="modal" title="A free Bootstrap video landing theme" href="#aboutModal">로그인</a>
+                        	<a class="page-scroll" data-toggle="modal" title="A free Bootstrap video landing theme" href="#aboutModal">LOGIN</a>
                     	</li>
                    	</c:if>
                    	<c:if test="${LoginUser!=null }">
 						<li>           	
-           	        		<a class="page-scroll" data-toggle="modal" title="A free Bootstrap video landing theme" href="#aboutModal">로그아웃</a>
+           	        		<a class="page-scroll" data-toggle="modal" title="A free Bootstrap video landing theme" href="#aboutModal">LOGOUT</a>
                    		</li>
                    	</c:if>
                	</ul>

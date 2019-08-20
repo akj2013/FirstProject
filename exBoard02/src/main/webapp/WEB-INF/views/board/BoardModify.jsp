@@ -60,7 +60,7 @@
 				
 				<button type="submit" class="btn btn-info">OK</button>
 				<button data-oper='list' class="btn btn-info" onClick="location.href='/spring/board/BoardView?bno=<c:out value="${board.bno }"/>'">취소</button>
-				<button data-oper='list' class="btn btn-info" onClick="location.href='/spring/board/BoardList'">List</button>
+				<button data-oper='list' class="btn btn-info" onClick="location.href='/spring/board/BoardListWithPaging'">List</button>
 				</form>
 				
 			</div>

@@ -56,7 +56,7 @@
 					<h2>Writer</h2> <input class="form-control" name='writer' value='<c:out value="${board.writer }"/>' >
 				</div>
 				<button data-oper='modify' class="btn btn-info" onClick="location.href='/spring/board/BoardModify?bno=<c:out value="${board.bno }"/>'">수정</button>
-				<button data-oper='list' class="btn btn-info" onClick="location.href='/spring/board/BoardList'">리스트</button>
+				<button data-oper='list' class="btn btn-info" onClick="location.href='/spring/board/BoardListWithPaging'">리스트</button>
 				<button data-oper='delete' class="btn btn-info" onClick="location.href='/spring/board/BoardDelete?bno=<c:out value="${board.bno }"/>'">삭제</button>
 				<button data-oper='list' class="btn btn-info" onClick="location.href='/spring/board/BoardWrite'">글쓰기</button>
 			</div>

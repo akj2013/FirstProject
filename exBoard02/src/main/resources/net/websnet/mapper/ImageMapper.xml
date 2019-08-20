@@ -25,6 +25,7 @@
 				rownum rn, idx, filename from tbl_image where rownum <= #{pageNum} * #{amount})
 					where rn > (#{pageNum} -1) * #{amount} ]]>
 	</select>
+	<!-- /*+ INDEX_DESC(테이블명 [인덱스명 [인덱스명] … ]) */ -->
 	
 	<select id="imageCount" resultType="int">
 		select count(idx) from tbl_image

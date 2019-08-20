@@ -33,7 +33,7 @@
                 <div class="col-xs-6 col-sm-3 column">
                     <h4>About</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/spring/board/BoardListWithPaging">BoardListWithPaging</a></li>
                         <li><a href="#">Delivery Information</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms &amp; Conditions</a></li>

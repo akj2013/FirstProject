@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.log4j.Log4j;
 import net.websnet.domain.BoardVO;
+import net.websnet.domain.Criteria;
+import net.websnet.domain.PageVO;
 import net.websnet.service.BoardService;
 
 @Controller // 스프링의 빈으로 인식할 수 있게 하는 어노테이션
@@ -29,7 +30,6 @@ public class BoardController {
 	public void list(Model model) {
 		System.out.println("리스트 페이지를 호출합니다.");
 		model.addAttribute("list", service.getList());
-		
 	}
 	
 	@GetMapping("/BoardWrite")
@@ -42,7 +42,7 @@ public class BoardController {
 
 		service.register(board);
 		rttr.addFlashAttribute("result", board.getBno());
-		return "redirect:/board/BoardList"; // redirect 접두어를 이용하면 스프링 MVC가 내부적으로 response.sendRedirect()를 처리해 준다.
+		return "redirect:/board/BoardListWithPaging"; // redirect 접두어를 이용하면 스프링 MVC가 내부적으로 response.sendRedirect()를 처리해 준다.
 	}
 	
 	@GetMapping({"/get","/BoardModify"})
@@ -73,12 +73,21 @@ public class BoardController {
 		if(service.remove(bno)) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		return "redirect:/board/list";
+		return "redirect:/board/BoardListWithPaging";
 	}
 	
 	@GetMapping("/BoardDelete")
 	public String remove(@RequestParam("bno") Long bno) {
 		service.remove(bno);
-		return "redirect:/board/BoardList";
+		return "redirect:/board/BoardListWithPaging";
+	}
+	
+	@GetMapping("/BoardListWithPaging")
+	public void list(Model model, HttpServletRequest request, Criteria cri) {
+		System.out.println("게시판 페이지를 페이징 기법으로 호출합니다.");
+		cri.setAmount(5);// 1페이지 당 5개씩 출력되도록 생성자를 이용한다.
+		model.addAttribute("list",service.boardList(cri));
+		model.addAttribute("pageMaker", new PageVO(cri, service.boardCount()));
+		request.setAttribute("page", "board");
 	}
 }

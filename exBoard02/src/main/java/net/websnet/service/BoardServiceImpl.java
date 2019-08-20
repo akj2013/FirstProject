@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
 import net.websnet.domain.BoardVO;
+import net.websnet.domain.Criteria;
 import net.websnet.mapper.BoardMapper;
 
 
@@ -21,33 +22,37 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public void register(BoardVO board) {
-
 		mapper.insertSelectKey(board);
-
 	}
 
 	@Override
 	public BoardVO get(Long bno) {
-
 		return mapper.read(bno);
 	}
 
 	@Override
 	public boolean modify(BoardVO board) {
-
 		return mapper.update(board) == 1;
 	}
 
 	@Override
 	public boolean remove(Long bno) {
-	
 		return mapper.delete(bno) == 1;
 	}
 
 	@Override
 	public List<BoardVO> getList() {
-	
 		return mapper.getList();
+	}
+
+	@Override
+	public List<BoardVO> boardList(Criteria cri) {
+		return mapper.getListWithPaging(cri);
+	}
+
+	@Override
+	public int boardCount() {
+		return mapper.boardCount();
 	}
 
 }
