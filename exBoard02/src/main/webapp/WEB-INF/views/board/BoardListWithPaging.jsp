@@ -29,14 +29,13 @@
 	<!-- 헤더 종료 -->
 	
 	<!-- 본문 시작 -->
-	<section class="container-fluid" id="one">
+	<section class="container-fluid" id="one" style="padding-top: 35px;">
 		<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
 				
 				<h2 class="text-center text-primary">게시판 리스트</h2>
 				<hr class="primary">
-				
 				<!-- /.panel-heading -->
 			<div class="panel-body">
 				<table class="table table-bordered table-hover">

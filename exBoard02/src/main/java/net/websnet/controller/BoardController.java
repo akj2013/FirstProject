@@ -90,4 +90,9 @@ public class BoardController {
 		model.addAttribute("pageMaker", new PageVO(cri, service.boardCount()));
 		request.setAttribute("page", "board");
 	}
+	
+	@GetMapping("/BoardListAjax")
+	public void test() {
+		System.out.println("BoardController에서 BoardListAjax 페이지를 호출합니다.");
+	}
 }

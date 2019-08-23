@@ -34,9 +34,9 @@
                     <h4>About</h4>
                     <ul class="list-unstyled">
                         <li><a href="/spring/board/BoardListWithPaging">BoardListWithPaging</a></li>
-                        <li><a href="#">Delivery Information</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="/spring/Rest/list/page=1&pagePerCnt=5">RestController</a></li>
+                        <li><a href="/spring/Rest/BoardListAjax/5/1">RestController2</a></li>
+                        <li><a href="/spring/board/BoardListAjax">컨트롤러 두개활용</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-3 column">
