@@ -48,9 +48,8 @@
 							<td>수정일</td>
 						</tr>
 					</thead>
-					
+					<tbody id="list">
 					<c:forEach items="${list }" var="board">
-					
 					<tr>
 						
 						<td><c:out value="${board.bno }"/></td>
@@ -60,6 +59,7 @@
 						<td><fmt:formatDate pattern="yyyy-MM-dd-HH-mm-ss" value="${board.updateDate }"/></td>
 					</tr>
 					</c:forEach>
+					</tbody>
 				</table>
 			</div>
 		</div>
